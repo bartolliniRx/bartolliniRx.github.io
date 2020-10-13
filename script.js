@@ -171,20 +171,24 @@ function showResults(results,root) {
 
 let activeNotes;
 searchButton.addEventListener('click', _=>{
-  activeNotes = [];
+  let rootNoteS = rootNote;
+
+  let activeNotes = [];
   note.forEach((el, i, arr) => {
     if(el.active) activeNotes.push(el.nr);
   });
   console.log(activeNotes);
 
-  if(rootNote){
-    let offset = rootNote - 1;
+  if(!rootNoteS) rootNoteS = activeNotes[0];
+
+  if(rootNoteS){
+    let offset = rootNoteS - 1;
     activeNotes.forEach((el, i, arr) => {
       arr[i] -= offset;
       if(arr[i]<1) arr[i] += 12;
     });
     activeNotes.sort(compareNr);
     console.log(activeNotes);
-  } else rootNote = activeNotes[0];
-  resultsDiv.innerHTML = showResults(compareNotes(activeNotes),rootNote);
+  }
+  resultsDiv.innerHTML = showResults(compareNotes(activeNotes),rootNoteS);
 })
