@@ -1,41 +1,25 @@
 //SCALES
 
-function Scale(name, notes)
-{
-  this.name = name;
-  this.notes = notes;
-  this.quantity = notes.length;
+function Scale(name, notes){
+    this.name = name;
+    this.notes = notes;
+    this.quantity = notes.length;
 }
 
 const scales = [];
 scales.push(
-  new Scale('Major',[1, 3, 5, 6, 8, 10, 12])
-);
-scales.push(
-  new Scale('Dorian',[1, 3, 4, 6, 8, 10, 11])
-);
-scales.push(
-  new Scale('Phrygian',[1, 2, 4, 6, 8, 9, 11])
-);
-scales.push(
-  new Scale('Lydian',[1, 3, 5, 7, 8, 10, 12])
-);
-scales.push(
-  new Scale('Mixolydian',[1, 3, 5, 6, 8, 10, 11])
-);
-scales.push(
-  new Scale('Natural Minor',[1, 3, 4, 6, 8, 9, 11])
-);
-scales.push(
-  new Scale('Locrian',[1, 2, 4, 6, 7, 9, 11])
+new Scale('Major',[1, 3, 5, 6, 8, 10, 12]),
+new Scale('Dorian',[1, 3, 4, 6, 8, 10, 11]),
+new Scale('Phrygian',[1, 2, 4, 6, 8, 9, 11]),
+new Scale('Lydian',[1, 3, 5, 7, 8, 10, 12]),
+new Scale('Mixolydian',[1, 3, 5, 6, 8, 10, 11]),
+new Scale('Natural Minor',[1, 3, 4, 6, 8, 9, 11]),
+new Scale('Locrian',[1, 2, 4, 6, 7, 9, 11])
 );
 
 //SORT FUNCTION
 
-function compareNr(a, b) {
-    return a - b
-}
-
+const compareNr = (a, b) => a - b;
 
 //DOM
 
@@ -54,18 +38,20 @@ function Note(name){
 
 const note = [];
 
-note[0] = new Note('C');
-note[1] = new Note('C#');
-note[2] = new Note('D');
-note[3] = new Note('D#');
-note[4] = new Note('E');
-note[5] = new Note('F');
-note[6] = new Note('F#');
-note[7] = new Note('G');
-note[8] = new Note('G#')
-note[9] = new Note('A');
-note[10] = new Note('A#');
-note[11] = new Note('B');
+note.push(
+new Note('C'),
+new Note('C#'),
+new Note('D'),
+new Note('D#'),
+new Note('E'),
+new Note('F'),
+new Note('F#'),
+new Note('G'),
+new Note('G#'),
+new Note('A'),
+new Note('A#'),
+new Note('B')
+);
 
 //STYLES
 
@@ -125,7 +111,7 @@ note.forEach((el, i, arr) => {
 
 //COMPARING NOTES
 
-function compareNotes(notes){
+const compareNotes = (notes) => {
   const qon = notes.length;
   let correctScales = [];
   scales.forEach((item, i) => {
@@ -143,7 +129,7 @@ function compareNotes(notes){
 //SHOWING RESULTS
 
 function showResults(results,root) {
-  if(!results.length) return "<span>None scales found :/</span><span><i>try with different notes</i></span>";
+  if(!results.length) return "<span>None of scales found :/</span><span><i>try with different notes</i></span>";
   let offset = root;
   root = note[root-1].name;
   let toHTML = '';
