@@ -14,7 +14,14 @@ new Scale('Phrygian',[1, 2, 4, 6, 8, 9, 11]),
 new Scale('Lydian',[1, 3, 5, 7, 8, 10, 12]),
 new Scale('Mixolydian',[1, 3, 5, 6, 8, 10, 11]),
 new Scale('Natural Minor',[1, 3, 4, 6, 8, 9, 11]),
-new Scale('Locrian',[1, 2, 4, 6, 7, 9, 11])
+new Scale('Locrian',[1, 2, 4, 6, 7, 9, 11]),
+new Scale('Major pentatonic',[1,3,5,8,10]),
+new Scale('Suspended',[1,3,6,8,11]),
+new Scale('Blues minor',[1,4,6,9,11]),
+new Scale('Blues major',[1,3,6,8,10]),
+new Scale('Minor pentatonic',[1,4,6,8,11]),
+new Scale('Diminished',[1,3,4,6,7,9,10,12]),
+new Scale('Dominant diminished',[1,2,4,5,7,8,10,11])
 );
 
 //SORT FUNCTION
